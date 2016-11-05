@@ -28,11 +28,11 @@ if ( ! class_exists( 'WPP_Class' ) ) {
 		 * Init Variables
 		 */
 	    public $settings = array(
-							'items_wrapper_open'		=> '<ul>',
-							'items_wrapper_close'		=> '</ul>',
-							'item_open'					=> '<li>',
-							'item_close'				=> '</li>',
-						);
+				'items_wrapper_open'		=> '<ul>',
+				'items_wrapper_close'		=> '</ul>',
+				'item_open'					=> '<li>',
+				'item_close'				=> '</li>',
+			);
 
 		/**
 		 * Constructor
@@ -77,15 +77,18 @@ if ( ! class_exists( 'WPP_Class' ) ) {
 					}
 					$current_page_count++;
 				}
-
-				echo '<div class="paginator wow fadeInUp">';
-					echo $this->settings['items_wrapper_open'] . $pagination_html . $this->settings['items_wrapper_close'];
-					echo '<div>';
-						echo $prev_next_buttons_html;
-					echo '</div>';
-					echo '<div class="clear"></div>';
-				echo '</div>';
+				$this->generate_html( $pagination_html, $prev_next_buttons_html );
 			endif;
+		}
+
+		public function generate_html($pagination_html, $prev_next_buttons_html) {
+			echo '<div class="paginator wow fadeInUp">';
+				echo $this->settings['items_wrapper_open'] . $pagination_html . $this->settings['items_wrapper_close'];
+				echo '<div>';
+					echo $prev_next_buttons_html;
+				echo '</div>';
+				echo '<div class="clear"></div>';
+			echo '</div>';
 		}
 	}
 }
