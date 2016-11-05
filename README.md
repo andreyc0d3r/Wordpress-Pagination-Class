@@ -1,18 +1,20 @@
 # Wordpress-Pagination-Class
 This class helps generate pagination by relaying on WordPress core functions. The difference is with this class its easier to modify the styling of the previous/next buttons and page numbers
 
-Pagination class in action:
-https://digitalapps.co/blog/
+Pagination class in action can be found on [Digital Apps Blog](https://digitalapps.co/blog/)
 
 #Usage
 Include the class
+```
 <?php 
 	include('inc/vendors/class-wordpress-pagination.php');
 ?>
+```
 
 Create object of a class.
-Options $args exaplained on the official WordPress website:
-https://codex.wordpress.org/Function_Reference/paginate_links
+Options for $args exaplained in the codex for [paginate_links function](https://codex.wordpress.org/Function_Reference/paginate_links)
+
+```
 <?php 
    global $wp_query;
    $args = array(
@@ -34,3 +36,4 @@ https://codex.wordpress.org/Function_Reference/paginate_links
     );
    $_WPP = new WPP_Class($args);
 ?>
+```
